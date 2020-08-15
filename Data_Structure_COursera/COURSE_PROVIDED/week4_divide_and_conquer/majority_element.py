@@ -1,5 +1,3 @@
-# Uses python3
-
 def binary_searchr(a, x):
     l, r = 0, len(a)
     mid = ((r + l) // 2)
