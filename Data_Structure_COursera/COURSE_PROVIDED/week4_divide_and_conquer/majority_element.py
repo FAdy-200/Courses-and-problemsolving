@@ -70,15 +70,120 @@ def na(A):
     return 0
 
 
+def MA(A):
+    d = {}
+    for j in range(len(A)):
+        if A[j] in d:
+            d[A[j]] += 1
+        else:
+            d[A[j]] = 1
+    if len(d) == len(A):
+        return True, 0, 0
+    m = max(d.values())
+    for i, j in d.items():
+        if j == m:
+            return False, i, j
+
+
+def co(e, f):
+    n = 0
+    for i in f:
+        if i == e:
+            n += 1
+    return n
+
+ccd = {}
+nm = 0
+def g(A):
+    if len(A) <= 6:
+        x = A[:len(A) // 2]
+        y = A[len(A) // 2:]
+        xc,xi,xn = MA(x)
+        if xc:
+            xc, xi, xn = MA(y)
+            if xc:
+                c = 0
+                for i in x:
+                    h = co(i, y)
+                    if h >= c:
+                        c = h+1
+                        xi = i
+                if c > len(A) / 2:
+                    return xi, c
+                else:
+                    return -1, -1
+            gg = co(xi, x)
+            xn += gg
+            if xn > len(A) / 2:
+                return xi, xn
+            else:
+                return -1, -1
+        gg = co(xi, y)
+        xn += gg
+        if xn > len(A) / 2:
+            return xi, xn
+        else:
+            return -1, -1
+    else:
+        f1 = A[:len(A) // 2]
+        f2 = A[len(A) // 2:]
+        z1 = (g(f1))
+        z2 = (g(f2))
+        if z1[0] >= 0:
+            nz1 = z1[1] + co(z1[0], f2)
+            if nz1 > len(A)/2:
+                return z1[0] , nz1
+        elif z2[0] >= 0:
+            nz2 = z2[1] + co(z2[0], f1)
+            if nz2 > len(A)/2:
+                return z2[0],nz2
+        else:
+            return -1, -1
+
+def gl(A):
+        global nm, ccd
+        nm += 1
+        ccd[nm] = []
+        f1 = A[:len(A) // 2]
+        f2 = A[len(A) // 2:]
+        z1 = (g(f1))
+        z2 = (g(f2))
+        ccd[nm].append(z1)
+        ccd[nm].append(z2)
+
+        # print(ccd)
+        if z1[0] >= 0:
+            nz1 = z1[1] + co(z1[0], f2)
+            if nz1 > len(A)/2:
+                return 1
+        if z2[0] >= 0:
+            nz2 = z2[1] + co(z2[0], f1)
+            if nz2 > len(A)/2:
+                return 1
+            else:
+                return 0
+        else:
+            return 0
+
+
+
+
+
+
+
+
+
 # def lec(u):
 #     if len(u) <=2:
 #
 
-g = int(input())
+hjhj = int(input())
 # g = 0
-if g:
-    A = sorted(list(map(int, input().split())))
-    print(me(A, 0, len(A)))
+if hjhj:
+    A = list(map(int, input().split()))
+    print(gl(A))
+    # A = sorted(list(map(int, input().split())))
+    # print(me(A, 0, len(A)))
 else:
     import numpy as np
     import pandas as pd
