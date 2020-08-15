@@ -98,13 +98,13 @@ def g(A):
     if len(A) <= 6:
         x = A[:len(A) // 2]
         y = A[len(A) // 2:]
-        xc,xi,xn = MA(x)
+        xc, xi, xn = MA(x)
         if xc:
             xc, xi, xn = MA(y)
             if xc:
                 c = 0
-                for i in x:
-                    h = co(i, y)
+                for i in y:
+                    h = co(i, x)
                     if h >= c:
                         c = h+1
                         xi = i
@@ -125,31 +125,38 @@ def g(A):
         else:
             return -1, -1
     else:
+        # global nm,ccd
+        # nm += 1
+        # ccd[nm] = []
         f1 = A[:len(A) // 2]
         f2 = A[len(A) // 2:]
         z1 = (g(f1))
         z2 = (g(f2))
+        # ccd[nm].append(z1)
+        # ccd[nm].append(z2)
         if z1[0] >= 0:
             nz1 = z1[1] + co(z1[0], f2)
             if nz1 > len(A)/2:
-                return z1[0] , nz1
-        elif z2[0] >= 0:
+                return z1[0], nz1
+        if z2[0] >= 0:
             nz2 = z2[1] + co(z2[0], f1)
             if nz2 > len(A)/2:
-                return z2[0],nz2
+                return z2[0], nz2
+            else:
+                return -1, -1
         else:
             return -1, -1
 
 def gl(A):
-        global nm, ccd
-        nm += 1
-        ccd[nm] = []
+        # global nm, ccd
+        # nm += 1
+        # ccd[nm] = []
         f1 = A[:len(A) // 2]
         f2 = A[len(A) // 2:]
         z1 = (g(f1))
         z2 = (g(f2))
-        ccd[nm].append(z1)
-        ccd[nm].append(z2)
+        # ccd[nm].append(z1)
+        # ccd[nm].append(z2)
 
         # print(ccd)
         if z1[0] >= 0:
@@ -194,8 +201,11 @@ else:
     ):
         h = []
         A = sorted(list(np.random.choice(100, np.random.randint(low=1, high=100), replace=True)))
-        h.append(na(A))
-        h.append(me(A, 0, len(A)))
+        h.append(me(A,0,len(A)))
+        try:
+            h.append(gl(A))
+        except:
+            gl(A)
         h.append(A)
         z.append(h)
     ss = pd.DataFrame(z, columns=["r", "m", "A"])
