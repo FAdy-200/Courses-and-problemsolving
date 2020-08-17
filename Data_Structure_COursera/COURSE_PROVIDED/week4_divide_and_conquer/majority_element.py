@@ -163,10 +163,10 @@ def naive(A):
 hjhj = int(input())
 # g = 0
 if hjhj:
-    A = list(map(int, input().split()))
-    print(lec(A))
-    # A = sorted(list(map(int, input().split())))
-    # print(me(A, 0, len(A)))
+    # A = list(map(int, input().split()))
+    # print(lec(A))
+    A = sorted(list(map(int, input().split())))
+    print(mine(A, 0, len(A)))
 else:
     import numpy as np
     import pandas as pd
