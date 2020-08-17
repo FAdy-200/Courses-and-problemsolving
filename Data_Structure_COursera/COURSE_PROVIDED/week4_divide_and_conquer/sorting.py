@@ -1,7 +1,6 @@
 def srt_bi(a, b):
     for i in range(len(b)):
         l, r = 0, len(a)
-        mid = ((r + l) // 2)
         mo = -1
         while r >= l:
             mid = ((l + r) // 2)
@@ -57,14 +56,14 @@ def quick_sort(a):
     :return: sorted a
     faster by about 55% than quick_sort_bi
     """
-    if len(a) <= 2:
-        return sorted(a)
+    if len(a) == 1:
+        return a
     return srt(quick_sort(a[len(a) // 2:]), quick_sort(a[:len(a) // 2]))
 
 
 def quick_sort_bi(a):
-    if len(a) <= 2:
-        return sorted(a)
+    if len(a) == 1:
+        return a
     return srt_bi(quick_sort_bi(a[len(a) // 2:]), quick_sort_bi(a[:len(a) // 2]))
 
 
@@ -79,6 +78,7 @@ if n:
     # z = quick_sort_bi(a)
     h = quick_sort(a)
     print(" ".join(list(map(str, h))))
+    # print(" ".join(list(map(str, z))))
 else:
     import numpy as np
     import pandas as pd
