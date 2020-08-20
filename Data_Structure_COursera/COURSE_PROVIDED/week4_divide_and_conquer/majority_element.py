@@ -147,6 +147,32 @@ def lec(A):
     else:
         return 0
 
+def fast_me(A):
+    d={}
+    ma = 0
+    for i in A:
+        if i in d:
+            d[i]+=1
+        else:
+            d[i]=1
+        if d[i] > ma:
+            ma = d[i]
+    if ma > len(A)/2:
+        return 1
+    else:
+        return 0
+
+
+
+
+
+
+
+
+
+
+
+
 
 def naive(A):
     for j in range(len(A)):
@@ -161,31 +187,33 @@ def naive(A):
 
 
 hjhj = int(input())
-# g = 0
+# hjhj = 1
 if hjhj:
-    # A = list(map(int, input().split()))
+    # import numpy as np
+    A = list(map(int, input().split()))
     # print(lec(A))
-    A = sorted(list(map(int, input().split())))
-    print(mine(A, 0, len(A)))
+    # A = sorted(list(map(int, input().split())))
+    # A = list(np.random.choice(1000000, 10000000))
+    print(fast_me(A))
 else:
     import numpy as np
     import pandas as pd
 
     z = []
-    for i in range(
-            int(input())
+    for i in range(100
+            # int(input())
     ):
         h = []
         A = sorted(list(np.random.choice(100, np.random.randint(low=1, high=100), replace=True)))
         h.append(mine(A, 0, len(A)))
         try:
-            h.append(lec(A))
+            h.append(fast_me(A))
         except:
             lec(A)
-        h.append(A)
-        z.append(h)
-    ss = pd.DataFrame(z, columns=["r", "m", "A"])
-    ss["c"] = ss["r"] == ss["m"]
-    ss = ss[["r", "m", 'c', 'A']]
-    ss = ss[ss["c"] == False]
-    print(ss)
+        # h.append(A)
+        # z.append(h)
+    # ss = pd.DataFrame(z, columns=["r", "m", "A"])
+    # ss["c"] = ss["r"] == ss["m"]
+    # ss = ss[["r", "m", 'c', 'A']]
+    # ss = ss[ss["c"] == False]
+    # print(ss)
