@@ -34,7 +34,6 @@ for _ in range(n):
     else:
         z = sma(s[j + 2:])
         for i in z:
-            if
-        s[j+2:] = z
-        print("".join(s))
+            s[j+2:] = z
+            print("".join(s))
 
