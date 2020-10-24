@@ -23,25 +23,36 @@ def stri(a, b, ans):
 def morgan(a, b):
     a += 'z'
     b += 'z'
-
+    ai = 0
+    ab = 0
     for _ in range(len(a) + len(b) - 2):
-        if a < b:
-            yield a[0]
-            a = a[1:]
+        if a[ai:] < b[ab:]:
+            yield a[ai]
+            ai += 1
         else:
-            yield b[0]
-            b = b[1:]
+            yield b[ab]
+            ab += 1
 
 n = int(input())
 for _ in range(n):
     a = input()
     b = input()
-    al = len(a)
-    ab = len(b)
+    # al = len(a)
+    # ab = len(b)
     # x = stri(a,b,"")
     # print(x)
-
-    ans = ''.join(morgan(a, b))
+    a += 'z'
+    b += 'z'
+    ai = 0
+    ab = 0
+    ans = ""
+    for __ in range(len(a) + len(b) - 2):
+        if a[ai:] < b[ab:]:
+            ans += a[ai]
+            ai += 1
+        else:
+            ans += b[ab]
+            ab += 1
     # while len(ans) < (al+ab):
     #     if (ans + a[0]) < (ans + b[0]):
     #         ans = ans + a[0]

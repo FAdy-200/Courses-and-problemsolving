@@ -16,7 +16,6 @@ def getPattern(x):
         i += 1
     return p
 
-
 def calc_fib(n):
     if n == 0:
         return 0
@@ -25,7 +24,6 @@ def calc_fib(n):
     for i in range(1, n):
         p, c = c, (c + p)
     return c
-
 
 m, n = map(int, (input().split()))
 d = []
