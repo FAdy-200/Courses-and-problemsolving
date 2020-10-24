@@ -33,42 +33,21 @@ def morgan(a, b):
             yield b[ab]
             ab += 1
 
+
 n = int(input())
 for _ in range(n):
     a = input()
     b = input()
-    # al = len(a)
-    # ab = len(b)
-    # x = stri(a,b,"")
-    # print(x)
     a += 'z'
     b += 'z'
     ai = 0
     ab = 0
     ans = ""
     for __ in range(len(a) + len(b) - 2):
-        if a[ai:] < b[ab:]:
-            ans += a[ai]
-            ai += 1
+        if a < b:
+            ans += a[0]
+            a = a[1:]
         else:
-            ans += b[ab]
-            ab += 1
-    # while len(ans) < (al+ab):
-    #     if (ans + a[0]) < (ans + b[0]):
-    #         ans = ans + a[0]
-    #         a = a[1:]
-    #     elif (ans + a[0]) > (ans + b[0]):
-    #         ans = ans + b[0]
-    #         b = b[1:]
-    #     else:
-    #         if a[0] > b[0]:
-    #             ans = ans + b[0]
-    #             b = b[1:]
-    #         else:
-    #             ans = ans + a[0]
-    #             a = a[1:]
-    #     if len(b) == 0:
-    #         ans = ans + "".join(reversed(sorted((list(a)))))
-    #     elif len(a) == 0:
-    #         ans = ans + "".join(reversed(sorted((list(b)))))
+            ans += b[0]
+            b = b[1:]
     print(ans)
