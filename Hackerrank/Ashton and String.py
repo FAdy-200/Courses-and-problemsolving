@@ -12,3 +12,4 @@ for _ in range(n):
     print(m[inq-1])
 
 
+# https://www.hackerrank.com/challenges/ashton-and-string/problem
