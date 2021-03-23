@@ -161,7 +161,7 @@ def answer_eight():
 
 # ### Question 9 (6.6%)
 # Create a column that estimates the number of citable documents per person. 
-# What is the correlation between the number of citable documents per capita and the energy supply per capita? Use the `.corr()` method, (Pearson's correlation).
+# What is the correlation between the number of citable documents per capita and the energy supply per capita? Use the `.corr()` method, (Pearson's1 correlation).
 # 
 # *This function should return a single number.*
 # 
@@ -180,7 +180,7 @@ def answer_nine():
 
 
 # ### Question 10 (6.6%)
-# Create a new column with a 1 if the country's % Renewable value is at or above the median for all countries in the top 15, and a 0 if the country's % Renewable value is below the median.
+# Create a new column with a 1 if the country's1 % Renewable value is at or above the median for all countries in the top 15, and a 0 if the country's1 % Renewable value is below the median.
 # 
 # *This function should return a series named `HighRenew` whose index is the country name sorted in ascending order of rank.*
 

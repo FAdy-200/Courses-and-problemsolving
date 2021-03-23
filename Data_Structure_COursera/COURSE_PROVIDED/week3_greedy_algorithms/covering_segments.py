@@ -40,3 +40,5 @@ for i in range(1000):
     jk = (min_s(x, y))
 # print(jk[0])
 # print(" ".join(jk[1]))
+
+

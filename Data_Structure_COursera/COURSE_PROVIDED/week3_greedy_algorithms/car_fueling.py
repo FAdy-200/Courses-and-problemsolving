@@ -92,19 +92,19 @@ for i in range(n):
 #     h.append(tu)
 #     h.append(su)
 #     v.append(h)
-# ss = pd.DataFrame(v, columns=["True", "Expr", "d", "t", "s"])
+# ss = pd.DataFrame(v, columns=["True", "Expr", "d", "t", "s1"])
 # ss["check"] = (ss["True"] == ss["Expr"])
-# ss = ss[["True", "Expr", "check", "d", "t", "s"]]
+# ss = ss[["True", "Expr", "check", "d", "t", "s1"]]
 # ss = ss[ss["check"] == False]
 # # ss = ss[ss["True"] != -1]
 # print(ss)
 # d = int(input())
 # t = int(input())
 # input()
-# s = list(map(int, input().split()))
-# print(car_refueling_MINE(d, t, s))
-# print(car_refueling(d, t, s))
-# print(car_refuel_lec(d, t, s))
+# s1 = list(map(int, input().split()))
+# print(car_refueling_MINE(d, t, s1))
+# print(car_refueling(d, t, s1))
+# print(car_refuel_lec(d, t, s1))
 
 
 

@@ -53,14 +53,14 @@ print(calc_fib1(n, m))
 #     d.append(gg)
 #     v.append(d)
 #
-# s = pd.DataFrame(v, columns=["real","n%m", 'mine',
+# s1 = pd.DataFrame(v, columns=["real","n%m", 'mine',
 #                              "all"
 #                              ])
 #
-# s["check"] = s['real'] == s["mine"]
-# s = s[["n%m","real","mine",'check',
+# s1["check"] = s1['real'] == s1["mine"]
+# s1 = s1[["n%m","real","mine",'check',
 #        "all"
 #        ]]
-# print(s[s['check'] == False])
+# print(s1[s1['check'] == False])
 
 

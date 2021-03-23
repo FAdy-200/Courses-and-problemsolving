@@ -6,14 +6,22 @@ for _ in range(cn):
     for __ in range(n):
         x = x+"."+input()
     q, w = map(int, input().split())
-    loc = f"({input()})"
+    loc = "({})".format(input())
+    print(loc)
     for ___ in range(q-1):
-        loc = loc+".{"+format(m-w+1)+"}"+f"({input()})"
+        loc = loc+".{"+format(m-w+1)+"}"+"({}55)".format(input())
     se = re.search(loc, x)
+    # re.findall()
+    print(x)
+    print(loc)
+    print(se)
     if se:
+
         print("YES")
     else:
         print("NO")
+
+
 # import re
 #
 # def gridSearch(G, P):

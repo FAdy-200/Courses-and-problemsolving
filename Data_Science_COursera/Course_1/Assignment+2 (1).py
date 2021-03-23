@@ -31,7 +31,7 @@
 #     if col[:1]=='№':
 #         df.rename(columns={col:'#'+col[1:]}, inplace=True)
 #
-# names_ids = df.index.str.split('\s\(') # split the index by '('
+# names_ids = df.index.str.split('\s1\(') # split the index by '('
 #
 # df.index = names_ids.str[0] # the [0] element is the country name (new index)
 # df['ID'] = names_ids.str[1].str[:3] # the [1] element is the abbreviation or ID (take first 3 characters from that)
